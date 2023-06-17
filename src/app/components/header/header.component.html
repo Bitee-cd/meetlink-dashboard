@@ -1,0 +1,45 @@
+<div class="shadow-md py-5">
+  <div class="flex justify-between w-[95%] mx-auto items-center">
+    <div class="flex items-center gap-3">
+      <img src="./../../../assets/images/school_logo.png" alt="school logo" />
+      <p class="text-base">Nexus Limited, Zone 3 Abuja.</p>
+    </div>
+
+    <div class=""><p class="font-medium text-xl">Nexus Limited</p></div>
+    <div class="flex gap-5 items-center">
+      <!-- action buttons  -->
+      <ul class="flex gap-2">
+        <li
+          class="cursor-pointer relative rounded-xl flex items-center justify-center w-[50px] h-[50px] bg-[#D9D9D9]/30 hover:bg-grey"
+          *ngFor="let item of headerItems"
+        >
+          <div
+            *ngIf="item.label === 'NotificationBell'"
+            class="absolute top-0 right-[5%] bg-[#FF0000] rounded-full h-[20px] w-[20px] items-center justify-center flex text-white"
+          >
+            <p class="text-sm">6</p>
+          </div>
+          <div>
+            <img
+              [src]="'./../../../assets/images/' + item.image"
+              [alt]="item.label"
+            />
+          </div>
+        </li>
+      </ul>
+
+      <!-- admin profile  -->
+      <div class="flex gap-3">
+        <div
+          class="h-[55px] w-[55px] bg-sec rounded-md flex justify-center items-center"
+        >
+          <img src="./../../../assets/images/admin.png" alt="school logo" />
+        </div>
+        <div class="">
+          <p class="text-lg font-medium text-pri">Bello Taofeek</p>
+          <p class="text-grey text-sm">Administrator</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

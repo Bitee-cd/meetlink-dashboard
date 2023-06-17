@@ -1,0 +1,121 @@
+<app-layout>
+  <!-- search and filter section -->
+  <section class="w-[95%] mx-auto flex justify-between items-center my-5">
+    <p class="p font-medium">Visitor's Logbook</p>
+
+    <!-- search  -->
+    <div class="">
+      <div class="rounded-md h-[55px] flex bg-[#ECECEC]/50 items-center">
+        <div class="px-2">
+          <img
+            src="./../../../assets/images/search.png"
+            alt="search analytics"
+            class=""
+          />
+        </div>
+        <input
+          [(ngModel)]="search"
+          type="text"
+          name="search"
+          id="search"
+          class="bg-inherit outline-none px-2 text-lg"
+          placeholder="Search visits, members, people"
+        />
+        <button
+          (click)="onSearch()"
+          class="hover:bg-[#ECECEC]/20 bg-[#ECECEC] rounded-tr-lg rounded-br-lg h-full px-2"
+        >
+          <img
+            src="./../../../assets/images/filter.png"
+            alt="search analytics"
+            class=""
+          />
+        </button>
+      </div>
+      <p class="text-red-600 text-sm" *ngIf="searchError">
+        enter a search keyword
+      </p>
+    </div>
+
+    <!-- date switcher  -->
+    <app-date-carousel></app-date-carousel>
+
+    <!-- download  -->
+    <button class="flex bg-pri items-center gap-2 text-white p-5 rounded-md">
+      <img
+        src="./../../../assets/images/download.png"
+        alt="search analytics"
+        class=""
+      />
+      <p>Download Info</p>
+    </button>
+  </section>
+
+  <!-- types of visitors  -->
+  <section class="w-[95%] mx-auto my-5">
+    <div class="w-[60%] border border-grey/20 px-3 py-4 grid grid-cols-4">
+      <p
+        *ngFor="let item of seacrchTypes"
+        class="border-grey border-r font-medium text-base text-center"
+      >
+        {{ item.number }} {{ item.text }}
+      </p>
+    </div>
+  </section>
+
+  <!-- visitors data  -->
+  <section class="w-[95%] mx-auto my-5">
+    <!-- table header  -->
+    <div class="mb-10 border border-grey/20 px-3 py-4 grid grid-cols-7">
+      <p
+        *ngFor="let item of visitorsHeader"
+        class="font-medium text-pri text-base text-center"
+      >
+        {{ item.text }}
+      </p>
+    </div>
+
+    <!-- table details  -->
+    <div
+      *ngFor="let item of visitorsHeader"
+      class="mb-2 border border-grey/20 px-3 rounded-[4px] text-[10px] py-4 grid grid-cols-7 items-center"
+    >
+      <!-- status  -->
+      <div class="table_item">
+        <div
+          class="flex text-white h-[40px] bg-red-500 rounded-md items-center w-[90%]"
+        >
+          <p class="flex-1">Checked In</p>
+          <button
+            class="h-full rounded-[4px] bg-red-600 w-1/3 flex items-center justify-center"
+          >
+            <img
+              src="./../../../assets/images/arrow_down_circle.png"
+              alt="search analytics"
+              class=""
+            />
+          </button>
+        </div>
+      </div>
+      <!-- check in time  -->
+      <div class="table_item">7:21am</div>
+      <!-- check out time  -->
+      <div class="table_item">10:05am</div>
+      <!-- date  -->
+      <div class="table_item">Monday,May22,2023</div>
+      <!-- host  -->
+      <div class="table_item">Adamu Bello</div>
+      <!-- visitors  -->
+      <div class="table_item flex items-center gap-2">
+        <img
+          src="./../../../assets/images/visitor_profile.png"
+          alt="visitors profile"
+          class=""
+        />
+        <p class="truncate text-sm">Muhammad Sodiq</p>
+      </div>
+      <!-- meeting id  -->
+      <div class="table_item">#551 927 773</div>
+    </div>
+  </section>
+</app-layout>

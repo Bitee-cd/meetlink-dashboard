@@ -1,0 +1,23 @@
+<div class="h-full w-[80%] mx-auto pt-20">
+  <div class="flex items-center justify-center">
+    <app-logo />
+  </div>
+
+  <nav class="my-10">
+    <ul class="flex flex-col gap-5">
+      <li
+        class="cursor-pointer py-3 px-5 rounded-xl flex items-center gap-2"
+        *ngFor="let item of navItems"
+        [routerLink]="item.path"
+        routerLinkActive="activeNav"
+      >
+        <img
+          [src]="'./../../../assets/images/' + item.image"
+          alt="visible
+        eye"
+        />
+        <p class="text-lg">{{ item.label }}</p>
+      </li>
+    </ul>
+  </nav>
+</div>

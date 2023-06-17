@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+@import "ag-grid-community/styles/ag-grid.css";
+@import "ag-grid-community/styles/ag-theme-alpine.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+div,
+section,
+p,
+h1,
+h2,
+h3,
+h4,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+* {
+  font-family: "Poppins";
+}
+.screen-center {
+  @apply mx-auto max-w-[1728px] w-[90%];
+}
+.input {
+  @apply h-[60px] rounded-2xl w-full border border-blue-600/60 text-xl  px-5 placeholder:text-grey;
+}
+
+.input_button {
+  @apply h-[60px] rounded-2xl w-full bg-pri text-white border border-blue-600/60 text-xl px-5 font-bold;
+}
+.p {
+  @apply text-xl;
+}
+.h2 {
+  @apply text-4xl;
+}
+.activeNav {
+  @apply bg-pri text-sec;
+}
+.small_text {
+  @apply text-white font-bold text-xs p-1 px-2 rounded-md uppercase;
+}
+button {
+  @apply cursor-pointer;
+}
+.table_item {
+  @apply border-grey/50 border-r font-medium text-pri text-base text-center;
+}
