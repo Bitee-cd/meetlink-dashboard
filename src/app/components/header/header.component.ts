@@ -11,4 +11,14 @@ export class HeaderComponent {
     { path: '/visitors', label: 'Light Dark Mode', image: 'lightdark.png' },
     { path: '/members', label: 'NotificationBell', image: 'bell.png' },
   ];
+  menu_list = [
+    { location: 'Apo Branch' },
+    { location: 'Gwarimpa 3rd Avenue' },
+    { location: 'Gwarimpa 2nd Avenue' },
+  ];
+  showList: boolean = false;
+
+  onShowList = () => {
+    this.showList = !this.showList;
+  };
 }
